@@ -1,16 +1,18 @@
 [project]
 dynamic = ["optional-dependencies"]
 name = "llm-together"
-version = "0.4"
+version = "0.5"
 license = { text="MIT" }
 authors = [
   { name="Kévin Quesada" },
+  { name="Christian Braun" },
 ]
 description = "llm together plugin"
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
-  "llm>=0.5", "together==0.2.9" 
+  "llm>=0.22",
+  "together>=1.4.1"
 ]
 classifiers = [
     "License :: OSI Approved :: Apache Software License"
