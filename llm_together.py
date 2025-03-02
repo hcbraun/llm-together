@@ -99,7 +99,8 @@ class Together(llm.KeyModel):
                 stop = stop,
                 **kwargs,
             ):
-                yield chunk.choices[0].text
+                if chunk.choices and len(chunk.choices) > 0:
+                    yield chunk.choices[0].text
         else:
             output = self.client.completions.create(
                 prompt =  history + "\n" + user_prompt,
@@ -107,4 +108,5 @@ class Together(llm.KeyModel):
                 stop = stop,
                 **kwargs,
             )
-            yield output.choices[0].text
+            if output.choices and len(output.choices) > 0:
+                yield output.choices[0].text

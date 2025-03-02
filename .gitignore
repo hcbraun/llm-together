@@ -2,3 +2,4 @@
 venv/
 llm_together.egg-info/
 __pycache__
+.aider*
